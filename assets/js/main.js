@@ -171,74 +171,74 @@ intro
  
 /* ***************************************************************** */
 
-if (isMobile) {
+if (isMobile || isIPad || isSamsungBrowser) {
 
     $("html").addClass("mobile");
     $("html").removeClass("desktop");
 
-//     $("#slap-button-1").on("click", function () {  
-//         countClicks('Pepe');
-//         slapSound.play();
-//         tlSlapCL1.restart();
-//     });
+    $("#slap-button-1").on("click", function () {  
+        countClicks('Pepe');
+        slapSound.play();
+        tlSlapCL1.restart();
+    });
 
-//     $("#slap-button-2").on("click", function () {  
-//         countClicks('Andy');
-//         slapSound.play();
-//         tlSlapCL2.restart();
-//     });
+    $("#slap-button-2").on("click", function () {  
+        countClicks('Andy');
+        slapSound.play();
+        tlSlapCL2.restart();
+    });
 
-//     $("#slap-button-3").on("click", function () {  
-//         countClicks('Brett');
-//         slapSound.play();
-//         tlSlapCL3.restart();
-//     });
+    $("#slap-button-3").on("click", function () {  
+        countClicks('Brett');
+        slapSound.play();
+        tlSlapCL3.restart();
+    });
 
-//     $("#slap-button-4").on("click", function () {  
-//         countClicks('Wolf');
-//         slapSound.play();
-//         tlSlapCL4.restart();
-//     });
+    $("#slap-button-4").on("click", function () {  
+        countClicks('Wolf');
+        slapSound.play();
+        tlSlapCL4.restart();
+    });
 
-        $("#slap-button-1").on("touchstart", function () {  
-            countClicks('Pepe');
-            slapSound.play();
-            tlSlapMD1.restart();
-        });
+    // $("#slap-button-1").on("touchstart", function () {  
+    //     countClicks('Pepe');
+    //     slapSound.play();
+    //     tlSlapMD1.restart();
+    // });
 
-        $("#slap-button-1").on("touchend", function () { 
-            tlSlapMU1.restart();
-        });
+    // $("#slap-button-1").on("touchend", function () { 
+    //     tlSlapMU1.restart();
+    // });
 
-        $("#slap-button-2").on("touchstart", function () {     
-            countClicks('Andy'); 
-            slapSound.play();
-            tlSlapMD2.restart();
-        });
+    // $("#slap-button-2").on("touchstart", function () {     
+    //     countClicks('Andy'); 
+    //     slapSound.play();
+    //     tlSlapMD2.restart();
+    // });
 
-        $("#slap-button-2").on("touchend", function () {     
-            tlSlapMU2.restart();
-        });
+    // $("#slap-button-2").on("touchend", function () {     
+    //     tlSlapMU2.restart();
+    // });
 
-        $("#slap-button-3").on("touchstart", function () {      
-            countClicks('Brett');
-            slapSound.play();
-            tlSlapMD3.restart();
-        });
+    // $("#slap-button-3").on("touchstart", function () {      
+    //     countClicks('Brett');
+    //     slapSound.play();
+    //     tlSlapMD3.restart();
+    // });
 
-        $("#slap-button-3").on("touchend", function () {      
-            tlSlapMU3.restart();
-        });
+    // $("#slap-button-3").on("touchend", function () {      
+    //     tlSlapMU3.restart();
+    // });
 
-        $("#slap-button-4").on("touchstart", function () {      
-            countClicks('Wolf');
-            slapSound.play();
-            tlSlapMD4.restart();
-        });
+    // $("#slap-button-4").on("touchstart", function () {      
+    //     countClicks('Wolf');
+    //     slapSound.play();
+    //     tlSlapMD4.restart();
+    // });
 
-        $("#slap-button-4").on("touchend", function () {  
-            tlSlapMU4.restart();
-        });
+    // $("#slap-button-4").on("touchend", function () {  
+    //     tlSlapMU4.restart();
+    // });
 
 } else {
 
