@@ -25,6 +25,14 @@ $('.menu-btn').on("click", function (e) {
     }
 });
 
+// close menu on click outside
+$(document).on("click", function (e) {
+    var target = $(e.target);
+    if (!target.closest(".slap-leaderboard").length) {
+        $(".slap-leaderboard").removeClass("active");
+    }
+});
+
 /* ***************************************************************** */
 
 const slapSound = new Audio();
