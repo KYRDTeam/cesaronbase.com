@@ -85,7 +85,7 @@
 *, :after, :before { margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; user-select:none; -webkit-user-select:none; }
 
 html, body { width:100%; height: 100%; }
-html { /**/ font-size: 10px; /**/ overflow: hidden; }
+html { /**/ font-size: 10px; /**/ overflow: hidden; touch-action: manipulation; }
 body { overflow:hidden; font-size: 1rem; font-weight: 400; font-family: var(--font-family); color:#1c1b1b; background: var(--blue-dark); }
 
 /* body.blocked-screen { pointer-events: none; }
@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6 { color: var(--mono-white); font-weight: bold; font-famil
 /* *************************************************************************************************** */
 
 .slap-actions { width:100%; height:100%; position: absolute; top:0; left: 0; z-index:89; }
-.slap-button { width:36vh; height: 55vh; position:absolute; left:50%; bottom:0; transform: translate(-50%, 0); /*background: rgba(10,20,26,.3);*/ border:none; background: transparent; cursor: pointer; }
+.slap-button { outline: none; width:36vh; height: 55vh; position:absolute; left:50%; bottom:0; transform: translate(-50%, 0); /*background: rgba(10,20,26,.3);*/ border:none; background: transparent; cursor: pointer; }
 
 .slap-button#slap-button-1 { height: 52vh!important; margin-left:-65vh; }
 .slap-button#slap-button-2 { height: 58vh!important; margin-left:-29vh; }

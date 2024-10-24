@@ -38,10 +38,10 @@
                 <strong id="display" class="sc-no">Landscape</strong>
             </div>
             <div class="slap-actions">
-                <button type="button" class="slap-button slap-button-1" id="slap-button-1" title="Hit $Pepe"></button>
-                <button type="button" class="slap-button slap-button-2" id="slap-button-2" title="Hit $Andy"></button>
-                <button type="button" class="slap-button slap-button-3" id="slap-button-3" title="Hit $Brett"></button>
-                <button type="button" class="slap-button slap-button-4" id="slap-button-4" title="Hit $Wolf"></button>               
+                <div type="button" class="slap-button slap-button-1" id="slap-button-1" title="Hit $Pepe"></div>
+                <div type="button" class="slap-button slap-button-2" id="slap-button-2" title="Hit $Andy"></div>
+                <div type="button" class="slap-button slap-button-3" id="slap-button-3" title="Hit $Brett"></div>
+                <div type="button" class="slap-button slap-button-4" id="slap-button-4" title="Hit $Wolf"></div>               
             </div>
             <div class="slap-leaderboard">
                 <div class="sl-header">
@@ -160,6 +160,16 @@
     <script src='./assets/js/gsap/SplitText.min.js?ver=1.0.0'></script>
     <script type="text/javascript" src="./assets/js/slap-animations.js?ver=1.0.0"></script>
     <script type="text/javascript" src="./assets/js/main.js?ver=1.0.0"></script>
+    <script>
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
 		    
 </body>
 </html>
