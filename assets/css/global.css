@@ -164,12 +164,12 @@ h1, h2, h3, h4, h5, h6 { color: var(--mono-white); font-weight: bold; font-famil
 .slap-backgrounds { width:100%; height: 100%; position:relative; background: transparent no-repeat 50% 50% / auto 120%; }
 .slap-background { position:absolute; top:0; left:0; }
 
-.slap-backgrounds { background-image: url(../images/slap-section/0.jpg), url(../images/slap-section/0.png); }
+.slap-backgrounds { background-image: url(../images/slap-section/0.jpg), url(../images/slap-section/0.png?v=1); }
 .slap-backgrounds .slap-background { opacity:0; transition: opacity .2s ease-in-out; }
-.slap-background-1 { background-image: url(../images/slap-section/1.jpg), url(../images/slap-section/1.png); }
-.slap-background-2 { background-image: url(../images/slap-section/2.jpg), url(../images/slap-section/2.png); }
-.slap-background-3 { background-image: url(../images/slap-section/3.jpg), url(../images/slap-section/3.png); }
-.slap-background-4 { background-image: url(../images/slap-section/4.jpg), url(../images/slap-section/4.png); }
+.slap-background-1 { background-image: url(../images/slap-section/1.jpg), url(../images/slap-section/1.png?v=1); }
+.slap-background-2 { background-image: url(../images/slap-section/2.jpg), url(../images/slap-section/2.png?v=1); }
+.slap-background-3 { background-image: url(../images/slap-section/3.jpg), url(../images/slap-section/3.png?v=1); }
+.slap-background-4 { background-image: url(../images/slap-section/4.jpg), url(../images/slap-section/4.png?v=1); }
 
 /* *************************************************************************************************** */
 
