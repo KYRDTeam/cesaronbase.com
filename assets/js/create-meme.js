@@ -241,49 +241,18 @@ fileInput.addEventListener('change', (event) => {
     }
 });
 
-// draw selected element to canvas and export it
+// using lib html2canvas to export image
 exportBtn.addEventListener('click', function() {
     console.log('export clicked');
-    const image = document.getElementById('pfp-preview', { useCORS:true});
-    const overlayImage = document.getElementById('red-candle', { useCORS:true}); // Change this selector to the image you want to overlay
+    const elementToCapture = document.getElementById('pfp-image'); // Change this selector to the element you want to capture
 
-    // Ensure both images are fully loaded before drawing
-    if (image.complete && overlayImage.complete) {
-        // Set canvas size to match the image size
-        canvas.width = image.width;
-        canvas.height = image.height;
-
-        // Draw the base image
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-        // Draw the overlay image
-        ctx.drawImage(overlayImage, 0, 0, canvas.width, canvas.height); // Adjust position based on your layout
-
-        console.log('ok so far');
-
+    html2canvas(elementToCapture, {scale: 2}).then(canvas => {
         // Export the canvas as an image
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
-        link.crossOrigin = "anonymous";
         link.download = 'pfp-image.png';
         link.click();
-    } else {
-        console.error('Images are not fully loaded');
-    }
+    }).catch(error => {
+        console.error('Error capturing the element:', error);
+    });
 });
-
-// using lib html2canvas to export image
-// exportBtn.addEventListener('click', function() {
-//     console.log('export clicked');
-//     const elementToCapture = document.querySelector('.upload-section-image'); // Change this selector to the element you want to capture
-
-//     html2canvas(elementToCapture, { useCORS: true, allowTaint: true,}).then(canvas => {
-//         // Export the canvas as an image
-//         const link = document.createElement('a');
-//         link.href = canvas.toDataURL('image/png');
-//         link.download = 'pfp-image.png';
-//         link.click();
-//     }).catch(error => {
-//         console.error('Error capturing the element:', error);
-//     });
-// });
