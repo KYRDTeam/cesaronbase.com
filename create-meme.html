@@ -2,20 +2,16 @@
 
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RZK5MLEJ8"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-8RZK5MLEJ8');
-    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="" />
         
-    <title>$Cesar</title>
+    <title>$Cesar | Create Meme</title>
+
+    <meta name=”robots” content="index, follow">        
+    <meta name="description" content="">
+    <meta name="keywords" content="$Cesar, Cesar, Cesaronbase, Meme Creator"/>
+
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -25,81 +21,100 @@
     <link rel="stylesheet" href="./assets/css/global.css" type="text/css">
 
 </head>
-<body class="">
+<body class="view-user-image view-upload-elements view-upload-elements-buttons">
 
     <div class="wrapper">
 
-        <section class="slap-section">
-            <div class="slap-backgrounds">
-                <div class="slap-background slap-background-1" id="slap-background-1"></div>
-                <div class="slap-background slap-background-2" id="slap-background-2"></div>
-                <div class="slap-background slap-background-3" id="slap-background-3"></div>
-                <div class="slap-background slap-background-4" id="slap-background-4"></div>
-            </div>
-            <div class="slap-counter">
-                <h2 class="sc-title">Hits</h2>
-                <h3 class="sc-subtitle">Count</h2>
-                <strong id="countDisplay" class="sc-no">00</strong>
-            </div>
-            <div class="mobile-portrait">
-                <h2 class="sc-title">Turn</h2>
-                <h3 class="sc-subtitle">Your phone to</h2>
-                <strong id="display" class="sc-no">Landscape</strong>
-            </div>
-            <div class="slap-actions">
-                <div type="button" class="slap-button slap-button-1" id="slap-button-1" title="Hit $Pepe"></div>
-                <div type="button" class="slap-button slap-button-2" id="slap-button-2" title="Hit $Andy"></div>
-                <div type="button" class="slap-button slap-button-3" id="slap-button-3" title="Hit $Brett"></div>
-                <div type="button" class="slap-button slap-button-4" id="slap-button-4" title="Hit $Wolf"></div>               
-            </div>
-            <div class="slap-leaderboard">
-                <div class="sl-header">
-                    <h3><span>Total Hits:</span><strong id="total-slap">1,335,062</strong></h3>
-                    <i class="icon-arrow-bottom">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 25" style="enable-background:new 0 0 24 25;" xml:space="preserve">
-                            <path d="M11.08,17.68l-7.19-7.19c-0.66-0.66-0.66-1.74,0-2.4l0.6-0.6c0.66-0.66,1.74-0.66,2.4,0l5.49,5.49l5.49-5.49 c0.66-0.66,1.74-0.66,2.4,0l0.6,0.6c0.66,0.66,0.66,1.74,0,2.4l-7.19,7.19c-0.35,0.35-0.83,0.51-1.29,0.49 C11.91,18.19,11.43,18.03,11.08,17.68z"/>
-                        </svg>
-                    </i>
-                </div>
-                <div class="sl-body">
-                    <h4>Leaderboard</h4>
-                    <ul>                        
-                        <li class="andy">
-                            <img src="assets/images/layout/andy-icon.png" />
-                            <strong>$Andy</strong>
-                            <span id="andy-count">551,420</span>
-                        </li>
-                        <li class="brett">
-                            <img src="assets/images/layout/brett-icon.png" />
-                            <strong>$Brett</strong>
-                            <span id="brett-count">351,620</span>
-                        </li>
-                        <li class="pepe">
-                            <img src="assets/images/layout/pepe-icon.png" />
-                            <strong>$Pepe</strong>
-                            <span id="pepe-count">243,620</span>
-                        </li>
-                        <li class="wolf">
-                            <img src="assets/images/layout/wolf-icon.png" />
-                            <strong>$Wolf</strong>
-                            <span id="wolf-count">188,340</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <section class="pfp-creator-section">
+
+            <div class="background-txt">
+                <div class="background-txt-wrapper">
+                    <span>$Cesar</span><span>$Cesar</span><span>$Cesar</span><span>$Cesar</span><span>$Cesar</span>
+                </div>                              
+            </div>    
+            
+            <div class="upload-section">
+                <h1 class="main-title">Customize your PFP</h1>
+                <div class="upload-section-wrapper">                    
+                    <div class="upload-section-image">                    
+                        <!-- <button class="button button-style">Upload Image</button> -->
+                        <!-- <img id="pfp-preview" class="user-image" src="assets/images/create-pfp/user.jpg" alt="PFP Preview" /> -->
+                        <canvas id="pfp-canvas" style="display:none;"></canvas>
+                        <img id="pfp-preview" class="user-image" src="" alt="PFP Preview"/>
+                        <div class="upload-section-elements">
+                            <img id="red-candle" class="item-red-candle" src="assets/images/create-pfp/red-candle.png" alt="">
+                            <img class="item-green-candle" src="assets/images/create-pfp/green-candle.png" alt=""/>
+                            <img class="item-head-front" src="assets/images/create-pfp/cesar-head-front.png" alt=""/>
+                            <img class="item-head-side" src="assets/images/create-pfp/cesar-head-side.png" alt=""/>
+                            <img class="item-head-side-more" src="assets/images/create-pfp/cesar-head-side-more.png" alt=""/>
+                            <img class="item-head-turned" src="assets/images/create-pfp/cesar-head-turned.png" alt=""/>
+                            <img class="item-crown" src="assets/images/create-pfp/crown.png" alt=""/>                            
+                        </div>
+                        <!-- <input type="file" name="" /> -->
+                    </div>
+                    <div class="upload-elements">
+                        <nav>
+                            <button class="ue-button trigger-cesar-head-front" type="button">
+                                <span>
+                                    <img src="./assets/images/create-pfp/btn-cesar-head-front.png" />
+                                </span>
+                                <strong>Add Cesar Head Front</strong>
+                            </button>
+                            <button class="ue-button trigger-cesar-head-side" type="button">
+                                <span>
+                                    <img src="./assets/images/create-pfp/btn-cesar-head-side.png" />
+                                </span>
+                                <strong>Add Cesar Head Side</strong>
+                            </button>
+                            <button class="ue-button trigger-cesar-head-side-more" type="button">
+                                <span>
+                                    <img src="./assets/images/create-pfp/btn-cesar-head-side-more.png" />
+                                </span>
+                                <strong>Add Cesar Head Side</strong>
+                            </button>     
+                            <button class="ue-button trigger-cesar-head-turned" type="button">
+                                <span>
+                                    <img src="./assets/images/create-pfp/btn-cesar-head-turned.png" />
+                                </span>
+                                <strong>Add Cesar Head Turned</strong>
+                            </button> 
+                            <button class="ue-button trigger-crown" type="button">
+                                <span>
+                                    <img src="./assets/images/create-pfp/btn-crown.png" />
+                                </span>
+                                <strong>Add<br/>Crown</strong>
+                            </button>
+                            <button class="ue-button trigger-red-candle" type="button">
+                                <span>
+                                    <img src="./assets/images/create-pfp/btn-red-candle.png" />
+                                </span>
+                                <strong>Add Red Candle</strong>
+                            </button>
+                            <button class="ue-button trigger-green-candle" type="button">
+                                <span>
+                                    <img src="./assets/images/create-pfp/btn-green-candle.png" />
+                                </span>
+                                <strong>Add Green Candle</strong>
+                            </button>                                               
+                        </nav>  
+                    </div> 
+                </div>  
+                <div class="upload-elements-buttons">
+                    <div class="upload-btn">
+                        <button class="button button-l button-style" type="button">Upload Image</button>
+                        <input id="pfp-input" type="file" name="" />
+                    </div>
+                    <button id="export-pfp" class="button button-l button-style export-button" type="button">Export Image</button> 
+                </div>                                   
+            </div>  
+
         </section>
 
     </div>
 
     <header class="header">
         <div class="header-left">
-            <h1 class="logo"><img src="assets/images/layout/$cesar-logo.png" alt="" /></h1>
-            <div class="slap-messages">
-                <p class="slap-message slap-message-1">Don't get rekt!</p>
-                <p class="slap-message slap-message-2">Hodl!</p>
-                <p class="slap-message slap-message-3">NO Fud!</p>
-                <p class="slap-message slap-message-4">To the moon!</p>
-            </div>
+            <h1 class="logo"><img src="assets/images/layout/$cesar-logo.png" alt="" /></h1>            
         </div>
         <div class="header-right">
             <a class="chain-address" href="#" target="_blank">
@@ -143,7 +158,7 @@
                         </g>
                     </svg>
                 </a>
-                <a class="follow-icon xtwitter" href="https://x.com/cesaronbase" title="" target="_blank">
+                <a class="follow-icon xtwitter" href="https://x.com/cesar_krystal" title="" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
                         <g class="xtwitter">
                             <path class="white" d="M41.78,25.59c0.17-1.8,0.11-6.15-0.16-7.94c-0.64-4.09-2-7.07-4.96-10.15c-2.74-2.85-6.96-2.57-10.72-2.55 c-3.26,0.02-12.8-0.58-15.74,1.03c-4.72,2.58-4.87,6.77-4.57,11.86c0.2,3.41-0.13,6.5,0.38,10.35c0.7,5.26,1.41,9.23,6.08,10.3 c3.2,0.74,10.9-0.07,14.19-0.06c2.98,0,6.53-0.23,9.26-1.48c3.02-1.39,5.53-3.74,6.23-11.35l0,0L41.78,25.59z"/>
@@ -163,18 +178,9 @@
     <script src='./assets/js/gsap/gsap.min.js?ver=1.0.0'></script>
     <script src='./assets/js/gsap/TextPlugin.min.js?ver=1.0.0'></script>
     <script src='./assets/js/gsap/SplitText.min.js?ver=1.0.0'></script>
-    <script type="text/javascript" src="./assets/js/slap-animations.js?ver=1.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript" src="./assets/js/create-meme.js?ver=1.0.0"></script>
     <script type="text/javascript" src="./assets/js/main.js?ver=1.0.0"></script>
-    <script>
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function (event) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-    </script>
 		    
 </body>
 </html>
