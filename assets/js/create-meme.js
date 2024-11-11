@@ -72,7 +72,7 @@ bgTxtPFP
 
 
 
-$('.upload-section-image').on("click", function (e) {
+$('.upload-section-image, #pfp-upload-btn').on("click", function (e) {
     $("body").addClass("view-user-image");
     $("body").addClass("view-upload-elements");
     $("body").addClass("view-upload-elements-buttons");
@@ -219,34 +219,25 @@ $('.trigger-green-candle').on("click", function (e) {
 /* ***************************************************************** */
 
 /* handle logic to upload & export pfp */
-
-const fileInput = document.getElementById('pfp-input');
-const imagePreview = document.getElementById('pfp-preview');
-const exportBtn = document.getElementById('export-pfp');
-const canvas = document.getElementById('pfp-canvas');
-const ctx = canvas.getContext('2d');
-
-fileInput.addEventListener('change', (event) => {
-    console.log('something change here');
+$('pfp-input').on('change', (event) => {
+    // fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
 
     if (file) {
         const reader = new FileReader();
-
         reader.onload = (e) => {
-            imagePreview.src = e.target.result;
+            $('#pfp-preview').src = e.target.result;
+            // imagePreview.src = e.target.result;
         };
-
         reader.readAsDataURL(file);
     }
 });
 
 // using lib html2canvas to export image
-exportBtn.addEventListener('click', function() {
-    console.log('export clicked');
+$('#export-pfp').on('click', function() {
     const elementToCapture = document.getElementById('pfp-image'); // Change this selector to the element you want to capture
 
-    html2canvas(elementToCapture, {scale: 2}).then(canvas => {
+    html2canvas(elementToCapture, {scale: 4}).then(canvas => {
         // Export the canvas as an image
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
