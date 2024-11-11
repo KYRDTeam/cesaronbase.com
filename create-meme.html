@@ -34,21 +34,22 @@
             </div>    
             
             <div class="upload-section">
-                <h1 class="main-title">Customize your PFP</h1>
+                <h1 class="main-title">Customize your Meme</h1>
                 <div class="upload-section-wrapper">                    
                     <div class="upload-section-image">                    
                         <!-- <button class="button button-style">Upload Image</button> -->
-                        <img class="user-image" src="assets/images/create-pfp/user.jpg" alt="" />
-                        <div class="upload-section-elements">
-                            <img class="item-red-candle" src="assets/images/create-pfp/red-candle.png" alt="" />
-                            <img class="item-green-candle" src="assets/images/create-pfp/green-candle.png" alt="" />
-                            <img class="item-head-front" src="assets/images/create-pfp/cesar-head-front.png" alt="" />
-                            <img class="item-head-side" src="assets/images/create-pfp/cesar-head-side.png" alt="" />
-                            <img class="item-head-side-more" src="assets/images/create-pfp/cesar-head-side-more.png" alt="" />
-                            <img class="item-head-turned" src="assets/images/create-pfp/cesar-head-turned.png" alt="" />
-                            <img class="item-crown" src="assets/images/create-pfp/crown.png" alt="" />                            
+                        <div id="pfp-image">
+                            <img id="pfp-preview" class="user-image" src="assets/images/create-pfp/upload-image.png" alt="" />
+                            <div class="upload-section-elements">
+                                <img class="item-red-candle" src="assets/images/create-pfp/red-candle.png" alt="" />
+                                <img class="item-green-candle" src="assets/images/create-pfp/green-candle.png" alt="" />
+                                <img class="item-head-front" src="assets/images/create-pfp/cesar-head-front.png" alt="" />
+                                <img class="item-head-side" src="assets/images/create-pfp/cesar-head-side.png" alt="" />
+                                <img class="item-head-side-more" src="assets/images/create-pfp/cesar-head-side-more.png" alt="" />
+                                <img class="item-head-turned" src="assets/images/create-pfp/cesar-head-turned.png" alt="" />
+                                <img class="item-crown" src="assets/images/create-pfp/crown.png" alt="" />                            
+                            </div>
                         </div>
-                        <input type="file" name="" />
                     </div>
                     <div class="upload-elements">
                         <nav>
@@ -98,11 +99,11 @@
                     </div> 
                 </div>  
                 <div class="upload-elements-buttons">
-                    <div class="upload-btn">
+                    <div class="upload-btn" id="pfp-upload-btn" >
                         <button class="button button-l button-style" type="button">Upload Image</button>
-                        <input type="file" name="" />
+                        <input id="pfp-input" type="file" name="" />
                     </div>
-                    <button class="button button-l button-style export-button" type="button">Export Image</button> 
+                    <button id="export-pfp-btn" class="button button-l button-style export-button" type="button">Export Image</button> 
                 </div>                                   
             </div>  
 
@@ -117,11 +118,11 @@
         <div class="header-right">
             <a class="chain-address" href="#" target="_blank">
                 <img src="assets/images/layout/basechain-logo.png" />
-                <span>CA5LA...M3A28</span>
+                <span>0x769d9E183d0B73278A42ed4818BC5c4bF50700Ad</span>
             </a>
             <nav class="main-menu">
-                <a class="button button-m" href="#">Whitepaper</a>
-                <a class="button button-m active" href="#">Create Meme</a>                
+                <a class="button button-m" href="docs/white_paper.pdf" target="_blank">Whitepaper</a>          
+                <a class="button button-m active" href="#">Create Meme</a>
             </nav>
             <a class="button menu-btn" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
@@ -176,6 +177,7 @@
     <script src='./assets/js/gsap/gsap.min.js?ver=1.0.0'></script>
     <script src='./assets/js/gsap/TextPlugin.min.js?ver=1.0.0'></script>
     <script src='./assets/js/gsap/SplitText.min.js?ver=1.0.0'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script type="text/javascript" src="./assets/js/create-meme.js?ver=1.0.0"></script>
     <script type="text/javascript" src="./assets/js/main.js?ver=1.0.0"></script>
 		    
