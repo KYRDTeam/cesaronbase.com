@@ -2,6 +2,15 @@
 
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RZK5MLEJ8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8RZK5MLEJ8');
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="" />
@@ -42,10 +51,10 @@
                 <strong id="display" class="sc-no">Landscape</strong>
             </div>
             <div class="slap-actions">
-                <button type="button" class="slap-button slap-button-1" id="slap-button-1" title="Hit $Pepe"></button>
-                <button type="button" class="slap-button slap-button-2" id="slap-button-2" title="Hit $Andy"></button>
-                <button type="button" class="slap-button slap-button-3" id="slap-button-3" title="Hit $Brett"></button>
-                <button type="button" class="slap-button slap-button-4" id="slap-button-4" title="Hit $Wolf"></button>               
+                <div type="button" class="slap-button slap-button-1" id="slap-button-1" title="Hit $Pepe"></div>
+                <div type="button" class="slap-button slap-button-2" id="slap-button-2" title="Hit $Andy"></div>
+                <div type="button" class="slap-button slap-button-3" id="slap-button-3" title="Hit $Brett"></div>
+                <div type="button" class="slap-button slap-button-4" id="slap-button-4" title="Hit $Wolf"></div>               
             </div>
             <div class="slap-leaderboard">
                 <div class="sl-header">
@@ -60,25 +69,21 @@
                     <h4>Leaderboard</h4>
                     <ul>                        
                         <li class="andy">
-                            <span>01.</span> 
                             <img src="assets/images/layout/andy-icon.png" />
                             <strong>$Andy</strong>
                             <span id="andy-count">551,420</span>
                         </li>
                         <li class="brett">
-                            <span>02.</span> 
                             <img src="assets/images/layout/brett-icon.png" />
                             <strong>$Brett</strong>
                             <span id="brett-count">351,620</span>
                         </li>
                         <li class="pepe">
-                            <span>03.</span> 
                             <img src="assets/images/layout/pepe-icon.png" />
                             <strong>$Pepe</strong>
                             <span id="pepe-count">243,620</span>
                         </li>
                         <li class="wolf">
-                            <span>04.</span> 
                             <img src="assets/images/layout/wolf-icon.png" />
                             <strong>$Wolf</strong>
                             <span id="wolf-count">188,340</span>
@@ -103,10 +108,10 @@
         <div class="header-right">
             <a class="chain-address" href="#" target="_blank">
                 <img src="assets/images/layout/basechain-logo.png" />
-                <span>CA5LA...M3A28</span>
+                <span>Comming soon</span>
             </a>
             <nav class="main-menu">
-                <a class="button button-m" href="#">Whitepaper</a>
+                <a class="button button-m" href="docs/white_paper.pdf" target="_blank">Whitepaper</a>          
                 <a class="button button-m" href="create-meme.html">Create Meme</a>                
             </nav>
             <a class="button menu-btn" href="#">
@@ -142,7 +147,7 @@
                         </g>
                     </svg>
                 </a>
-                <a class="follow-icon xtwitter" href="https://x.com/cesar_krystal" title="" target="_blank">
+                <a class="follow-icon xtwitter" href="https://x.com/cesaronbase" title="" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
                         <g class="xtwitter">
                             <path class="white" d="M41.78,25.59c0.17-1.8,0.11-6.15-0.16-7.94c-0.64-4.09-2-7.07-4.96-10.15c-2.74-2.85-6.96-2.57-10.72-2.55 c-3.26,0.02-12.8-0.58-15.74,1.03c-4.72,2.58-4.87,6.77-4.57,11.86c0.2,3.41-0.13,6.5,0.38,10.35c0.7,5.26,1.41,9.23,6.08,10.3 c3.2,0.74,10.9-0.07,14.19-0.06c2.98,0,6.53-0.23,9.26-1.48c3.02-1.39,5.53-3.74,6.23-11.35l0,0L41.78,25.59z"/>
@@ -165,6 +170,16 @@
     <script type="text/javascript" src="./assets/js/slap-animations.js?ver=1.0.0"></script>
     <script type="text/javascript" src="./assets/js/home-page.js?ver=1.0.0"></script>
     <script type="text/javascript" src="./assets/js/main.js?ver=1.0.0"></script>
+    <script>
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
 		    
 </body>
 </html>
