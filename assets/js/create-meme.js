@@ -71,8 +71,7 @@ bgTxtPFP
 /* start --- after upload image this have to be deleted */
 
  
-
-$('.upload-section-image').on("click", function (e) {   
+$('.upload-section-image, #pfp-upload-btn').on("click", function (e) {   
     $("body").addClass("view-user-image"); 
     $("body").addClass("view-upload-elements");
     $("body").addClass("view-upload-elements-buttons");    
@@ -216,3 +215,32 @@ $('.trigger-green-candle').on("click", function (e) {
     }
 });
 
+/* ***************************************************************** */
+
+/* handle logic to upload & export pfp */
+$('#pfp-input').on('change', (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            $('#pfp-preview').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// using lib html2canvas to export image
+$('#export-pfp-btn').on('click', function() {
+    const elementToCapture = document.getElementById('pfp-image'); // Change this selector to the element you want to capture
+
+    html2canvas(elementToCapture, {scale: 4}).then(canvas => {
+        // Export the canvas as an image
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'pfp-image.png';
+        link.click();
+    }).catch(error => {
+        console.error('Error capturing the element:', error);
+    });
+});
