@@ -251,7 +251,8 @@ h1, h2, h3, h4, h5, h6 { color: var(--mono-white); font-weight: bold; font-famil
 .upload-section-image { width:36rem; height: 36rem; margin-bottom: .8rem; display:flex; align-items: center; justify-content: center; position: relative; border-radius: 1.6rem; border:1.2rem solid var(--yellow); box-shadow:.8rem .8rem 0 var(--mono-white); background: transparent url(../images/create-pfp/upload-image.png) no-repeat 50% 50% / auto 100%; overflow: hidden; }
 .upload-section-image input[type="file"] { width: 100%; height: 100%; position: absolute; bottom:0; left:0; opacity: 0; cursor: pointer; }
 .upload-section-image .user-image { width:100%; height: 100%; opacity: 0; }
-.view-user-image .upload-section-image .user-image { opacity: 1; }
+.view-user-image .upload-section-image .user-image { opacity: 1; object-fit: cover; }
+#pfp-image { height: 100%;}
 
 .upload-section-elements { width:100%; height: 100%; position:absolute; top:0; left:0; }
 .upload-section-elements img { height: auto; position:absolute; opacity: 0; }
