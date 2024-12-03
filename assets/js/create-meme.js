@@ -248,6 +248,8 @@ $("#pfp-input").on("change", (event) => {
     const reader = new FileReader();
     reader.onload = (e) => {
       $("#pfp-preview").attr("src", e.target.result);
+      $(".upload-section-image")[0].style.width = "auto";
+      $(".upload-section-image")[0].style.height = "400px";
     };
     reader.readAsDataURL(file);
   }
