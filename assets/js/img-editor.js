@@ -10,7 +10,7 @@ const moveableRedCandle = new Moveable(document.body, {
   warpable: true,
   pinchable: true,
   origin: true,
-  keepRatio: false,
+  keepRatio: true,
   edge: false,
   throttleDrag: 0,
   throttleResize: 0,
@@ -75,7 +75,7 @@ const moveableGreenCandle = new Moveable(document.body, {
   warpable: true,
   pinchable: true,
   origin: true,
-  keepRatio: false,
+  keepRatio: true,
   edge: false,
   throttleDrag: 0,
   throttleResize: 0,
@@ -140,7 +140,7 @@ const moveableHeadFront = new Moveable(document.body, {
   warpable: true,
   pinchable: true,
   origin: true,
-  keepRatio: false,
+  keepRatio: true,
   edge: false,
   throttleDrag: 0,
   throttleResize: 0,
@@ -150,7 +150,7 @@ const moveableHeadFront = new Moveable(document.body, {
 
 document.addEventListener("click", (event) => {
   const isOutsideClick =
-    !redCandle.contains(event.target) && // Click is outside the target
+    !headFront.contains(event.target) && // Click is outside the target
     !event.target.closest(".head-front-control"); // Click is outside Moveable's control box
 
   if (isOutsideClick) {
@@ -205,7 +205,7 @@ const moveableHeadSide = new Moveable(document.body, {
   warpable: true,
   pinchable: true,
   origin: true,
-  keepRatio: false,
+  keepRatio: true,
   edge: false,
   throttleDrag: 0,
   throttleResize: 0,
@@ -215,7 +215,7 @@ const moveableHeadSide = new Moveable(document.body, {
 
 document.addEventListener("click", (event) => {
   const isOutsideClick =
-    !redCandle.contains(event.target) && // Click is outside the target
+    !headSide.contains(event.target) && // Click is outside the target
     !event.target.closest(".head-side-control"); // Click is outside Moveable's control box
 
   if (isOutsideClick) {
@@ -270,7 +270,7 @@ const moveableHeadSideMore = new Moveable(document.body, {
   warpable: true,
   pinchable: true,
   origin: true,
-  keepRatio: false,
+  keepRatio: true,
   edge: false,
   throttleDrag: 0,
   throttleResize: 0,
@@ -280,7 +280,7 @@ const moveableHeadSideMore = new Moveable(document.body, {
 
 document.addEventListener("click", (event) => {
   const isOutsideClick =
-    !redCandle.contains(event.target) && // Click is outside the target
+    !headSideMore.contains(event.target) && // Click is outside the target
     !event.target.closest(".head-side-more-control"); // Click is outside Moveable's control box
 
   if (isOutsideClick) {
@@ -338,7 +338,7 @@ const moveableHeadTurned = new Moveable(document.body, {
   warpable: true,
   pinchable: true,
   origin: true,
-  keepRatio: false,
+  keepRatio: true,
   edge: false,
   throttleDrag: 0,
   throttleResize: 0,
@@ -348,7 +348,7 @@ const moveableHeadTurned = new Moveable(document.body, {
 
 document.addEventListener("click", (event) => {
   const isOutsideClick =
-    !redCandle.contains(event.target) && // Click is outside the target
+    !headTurned.contains(event.target) && // Click is outside the target
     !event.target.closest(".head-turned-control"); // Click is outside Moveable's control box
 
   if (isOutsideClick) {
@@ -391,6 +391,219 @@ moveableHeadTurned.on("warp", ({ target, clientX, clientY, delta, dist, multiply
   target.style.transform = `matrix3d(${this.matrix.join(",")})`;
 });
 
+const headSideRight = document.querySelector(".item-head-side-right");
+const moveableHeadSideRight = new Moveable(document.body, {
+  target: headSideRight,
+  container: document.body,
+  className: "head-side-right-control",
+  draggable: true,
+  resizable: true,
+  scalable: true,
+  rotatable: true,
+  warpable: true,
+  pinchable: true,
+  origin: true,
+  keepRatio: true,
+  edge: false,
+  throttleDrag: 0,
+  throttleResize: 0,
+  throttleScale: 0,
+  throttleRotate: 0,
+});
+
+document.addEventListener("click", (event) => {
+  const isOutsideClick =
+    !headSideRight.contains(event.target) && // Click is outside the target
+    !event.target.closest(".head-side-right-control"); // Click is outside Moveable's control box
+
+  if (isOutsideClick) {
+    document.querySelector(".head-side-right-control").style.display = "none";
+  } else {
+    document.querySelector(".head-side-right-control").style.display = "block";
+  }
+});
+
+/* draggable */
+moveableHeadSideRight.on("drag", ({ target, left, top }) => {
+  target.style.left = `${left}px`;
+  target.style.top = `${top}px`;
+  document.querySelector(".head-side-right-control").style.display = "block";
+});
+
+/* resizable */
+moveableHeadSideRight.on("resize", ({ target, width, height, dist, delta, clientX, clientY }) => {
+  delta[0] && (target.style.width = `${width}px`);
+  delta[1] && (target.style.height = `${height}px`);
+});
+
+/* scalable */
+moveableHeadSideRight.on("scale", ({ target, scale, dist, delta, transform, clientX, clientY }) => {
+  target.style.transform = transform;
+});
+
+/* rotatable */
+moveableHeadSideRight.on(
+  "rotate",
+  ({ target, beforeDelta, delta, dist, transform, clientX, clientY }) => {
+    target.style.transform = transform;
+  }
+);
+
+/* warpable */
+this.matrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
+moveableHeadSideRight.on(
+  "warp",
+  ({ target, clientX, clientY, delta, dist, multiply, transform }) => {
+    this.matrix = multiply(this.matrix, delta);
+    target.style.transform = `matrix3d(${this.matrix.join(",")})`;
+  }
+);
+
+const headSideMoreRight = document.querySelector(".item-head-side-more-right");
+const moveableHeadSideMoreRight = new Moveable(document.body, {
+  target: headSideMoreRight,
+  container: document.body,
+  className: "head-side-more-right-control",
+  draggable: true,
+  resizable: true,
+  scalable: true,
+  rotatable: true,
+  warpable: true,
+  pinchable: true,
+  origin: true,
+  keepRatio: true,
+  edge: false,
+  throttleDrag: 0,
+  throttleResize: 0,
+  throttleScale: 0,
+  throttleRotate: 0,
+});
+
+document.addEventListener("click", (event) => {
+  const isOutsideClick =
+    !headSideMoreRight.contains(event.target) && // Click is outside the target
+    !event.target.closest(".head-side-more-right-control"); // Click is outside Moveable's control box
+
+  if (isOutsideClick) {
+    document.querySelector(".head-side-more-right-control").style.display = "none";
+  } else {
+    document.querySelector(".head-side-more-right-control").style.display = "block";
+  }
+});
+
+/* draggable */
+moveableHeadSideMoreRight.on("drag", ({ target, left, top }) => {
+  target.style.left = `${left}px`;
+  target.style.top = `${top}px`;
+  document.querySelector(".head-side-more-right-control").style.display = "block";
+});
+
+/* resizable */
+moveableHeadSideMoreRight.on(
+  "resize",
+  ({ target, width, height, dist, delta, clientX, clientY }) => {
+    delta[0] && (target.style.width = `${width}px`);
+    delta[1] && (target.style.height = `${height}px`);
+  }
+);
+
+/* scalable */
+moveableHeadSideMoreRight.on(
+  "scale",
+  ({ target, scale, dist, delta, transform, clientX, clientY }) => {
+    target.style.transform = transform;
+  }
+);
+
+/* rotatable */
+moveableHeadSideMoreRight.on(
+  "rotate",
+  ({ target, beforeDelta, delta, dist, transform, clientX, clientY }) => {
+    target.style.transform = transform;
+  }
+);
+
+/* warpable */
+this.matrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
+moveableHeadSideMoreRight.on(
+  "warp",
+  ({ target, clientX, clientY, delta, dist, multiply, transform }) => {
+    this.matrix = multiply(this.matrix, delta);
+    target.style.transform = `matrix3d(${this.matrix.join(",")})`;
+  }
+);
+
+const headTurnedRight = document.querySelector(".item-head-turned-right");
+const moveableHeadTurnedRight = new Moveable(document.body, {
+  target: headTurnedRight,
+  container: document.body,
+  className: "head-turned-right-control",
+  draggable: true,
+  resizable: true,
+  scalable: true,
+  rotatable: true,
+  warpable: true,
+  pinchable: true,
+  origin: true,
+  keepRatio: true,
+  edge: false,
+  throttleDrag: 0,
+  throttleResize: 0,
+  throttleScale: 0,
+  throttleRotate: 0,
+});
+
+document.addEventListener("click", (event) => {
+  const isOutsideClick =
+    !headTurnedRight.contains(event.target) && // Click is outside the target
+    !event.target.closest(".head-turned-right-control"); // Click is outside Moveable's control box
+
+  if (isOutsideClick) {
+    document.querySelector(".head-turned-right-control").style.display = "none";
+  } else {
+    document.querySelector(".head-turned-right-control").style.display = "block";
+  }
+});
+
+/* draggable */
+moveableHeadTurnedRight.on("drag", ({ target, left, top }) => {
+  target.style.left = `${left}px`;
+  target.style.top = `${top}px`;
+  document.querySelector(".head-turned-right-control").style.display = "block";
+});
+
+/* resizable */
+moveableHeadTurnedRight.on("resize", ({ target, width, height, dist, delta, clientX, clientY }) => {
+  delta[0] && (target.style.width = `${width}px`);
+  delta[1] && (target.style.height = `${height}px`);
+});
+
+/* scalable */
+moveableHeadTurnedRight.on(
+  "scale",
+  ({ target, scale, dist, delta, transform, clientX, clientY }) => {
+    target.style.transform = transform;
+  }
+);
+
+/* rotatable */
+moveableHeadTurnedRight.on(
+  "rotate",
+  ({ target, beforeDelta, delta, dist, transform, clientX, clientY }) => {
+    target.style.transform = transform;
+  }
+);
+
+/* warpable */
+this.matrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
+moveableHeadTurnedRight.on(
+  "warp",
+  ({ target, clientX, clientY, delta, dist, multiply, transform }) => {
+    this.matrix = multiply(this.matrix, delta);
+    target.style.transform = `matrix3d(${this.matrix.join(",")})`;
+  }
+);
+
 const crown = document.querySelector(".item-crown");
 const moveableCrown = new Moveable(document.body, {
   target: document.querySelector(".item-crown"),
@@ -403,7 +616,7 @@ const moveableCrown = new Moveable(document.body, {
   warpable: true,
   pinchable: true,
   origin: true,
-  keepRatio: false,
+  keepRatio: true,
   edge: false,
   throttleDrag: 0,
   throttleResize: 0,

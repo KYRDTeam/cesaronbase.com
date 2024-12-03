@@ -2,7 +2,7 @@ const mainTitle = new SplitText(".main-title", { type: "words" });
 const bgTxt = new SplitText(".background-txt span", { type: "words" });
 
 gsap.set(
-  ".item-head-front, .item-head-side, .item-head-side-more, .item-head-turned, .item-crown, .item-red-candle, .item-green-candle",
+  ".item-head-front, .item-head-side, .item-head-side-more, .item-head-turned, .item-head-side-right, .item-head-side-more-right, .item-head-turned-right, .item-crown, .item-red-candle, .item-green-candle",
   { autoAlpha: 0, scale: 0.98, transformOrigin: "50% 50%" }
 );
 
@@ -176,6 +176,60 @@ $(".trigger-cesar-head-turned").on("click", function (e) {
     });
   } else {
     gsap.to(".item-head-turned", {
+      duration: 0.5,
+      autoAlpha: 1,
+      scale: 1,
+      ease: "power1.out",
+    });
+  }
+});
+
+$(".trigger-cesar-head-side-right").on("click", function (e) {
+  if (!$(this).hasClass("active")) {
+    gsap.to(".item-head-side-right", {
+      duration: 0.5,
+      autoAlpha: 0,
+      scale: 0.98,
+      ease: "power1.out",
+    });
+  } else {
+    gsap.to(".item-head-side-right", {
+      duration: 0.5,
+      autoAlpha: 1,
+      scale: 1,
+      ease: "power1.out",
+    });
+  }
+});
+
+$(".trigger-cesar-head-side-more-right").on("click", function (e) {
+  if (!$(this).hasClass("active")) {
+    gsap.to(".item-head-side-more-right", {
+      duration: 0.5,
+      autoAlpha: 0,
+      scale: 0.98,
+      ease: "power1.out",
+    });
+  } else {
+    gsap.to(".item-head-side-more-right", {
+      duration: 0.5,
+      autoAlpha: 1,
+      scale: 1,
+      ease: "power1.out",
+    });
+  }
+});
+
+$(".trigger-cesar-head-turned-right").on("click", function (e) {
+  if (!$(this).hasClass("active")) {
+    gsap.to(".item-head-turned-right", {
+      duration: 0.5,
+      autoAlpha: 0,
+      scale: 0.98,
+      ease: "power1.out",
+    });
+  } else {
+    gsap.to(".item-head-turned-right", {
       duration: 0.5,
       autoAlpha: 1,
       scale: 1,
